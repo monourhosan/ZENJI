@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Syne', sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+  --font-sans: 'Inter', sans-serif;
+  --font-accent: 'Plus Jakarta Sans', sans-serif;
+  
+  --color-zenji-black: #080808;
+  --color-zenji-dark: #0f0f0f;
+  --color-zenji-charcoal: #161616;
+  --color-zenji-surface: #202020;
+  --color-zenji-border: #2e2e2e;
+  --color-zenji-muted: #8e8e8e;
+  --color-zenji-light: #f5f5f5;
+  --color-zenji-accent: #ccff00;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #080808;
+    color: #f3f3f3;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: -0.03em;
+  }
+
+  .font-mono-tag {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2e2e2e;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #505050;
+}
+
+/* Streetwear Graphic Details & Utilities */
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  color: transparent;
+  transition: all 0.3s ease;
+}
+
+.text-stroke:hover {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.glass-nav {
+  background: rgba(8, 8, 8, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(18, 18, 18, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.subtle-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Keyframes for marquee tape */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}

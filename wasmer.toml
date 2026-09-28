@@ -1,0 +1,19 @@
+[package]
+name = "zenji-streetwear"
+version = "0.1.0"
+description = "ZENJI — Minimal Luxury Streetwear Storefront"
+license = "MIT"
+
+[dependencies]
+"wasmer/static-web-server" = "^1"
+
+[fs]
+"/public" = "dist"
+
+[[command]]
+name = "serve"
+module = "wasmer/static-web-server:webserver"
+runner = "wasi"
+
+[command.annotations.wasi]
+env = { "SERVER_ROOT" = "/public", "SERVER_PORT" = "80" }
