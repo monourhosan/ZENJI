@@ -18,8 +18,8 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick, onLookbookClick }) => {
           loading="eager"
         />
         {/* Layered Gradients for High Readability and Streetwear Atmosphere */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#fbfbfb] via-[#fbfbfb]/85 to-white/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#fbfbfb]/95 via-[#fbfbfb]/70 to-transparent"></div>
+        <div className="hero-atmosphere-overlay absolute inset-0 bg-gradient-to-t from-[#fbfbfb] via-[#fbfbfb]/85 to-white/20 transition-all duration-[2600ms]"></div>
+        <div className="hero-atmosphere-side-overlay absolute inset-0 bg-gradient-to-r from-[#fbfbfb]/95 via-[#fbfbfb]/70 to-transparent transition-all duration-[2600ms]"></div>
         <div className="absolute inset-0 subtle-grid opacity-40"></div>
       </div>
 
@@ -49,7 +49,7 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick, onLookbookClick }) => {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <button
               onClick={onShopClick}
-              className="group px-8 py-4 bg-neutral-950 text-white hover:bg-neutral-800 transition-all duration-300 font-mono text-xs uppercase tracking-[0.2em] font-bold rounded flex items-center justify-center gap-3 shadow-xl hover:-translate-y-0.5 active:translate-y-0"
+              className="zenji-primary-btn group px-8 py-4 bg-neutral-950 text-white hover:bg-neutral-800 transition-all duration-300 font-mono text-xs uppercase tracking-[0.2em] font-bold rounded flex items-center justify-center gap-3 shadow-xl hover:-translate-y-0.5 active:translate-y-0"
             >
               <span>Shop Collection</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

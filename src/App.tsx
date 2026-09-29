@@ -1,5 +1,8 @@
 import React from 'react';
 import { CartProvider, useCart } from './context/CartContext';
+import { ThemeProvider } from './context/ThemeContext';
+import { CelestialAtmosphere } from './components/CelestialAtmosphere';
+import { DayNightCycleWidget } from './components/DayNightCycleWidget';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Marquee } from './components/Marquee';
@@ -24,11 +27,17 @@ const MainStorefront: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fbfbfb] text-[#121212] selection:bg-neutral-950 selection:text-white">
+    <div className="zenji-app-wrapper relative min-h-screen bg-[#fbfbfb] text-[#121212] selection:bg-neutral-950 selection:text-white transition-colors duration-[2600ms]">
+      {/* 27-second Celestial Atmosphere (Dawn & Dusk ambient wave) */}
+      <CelestialAtmosphere />
+
+      {/* Floating 27-second Day / Night Cycle Controller HUD */}
+      <DayNightCycleWidget />
+
       {/* Header */}
       <Header onOpenCart={openCart} />
 
-      <main id="main-content">
+      <main id="main-content" className="relative z-10">
         {/* 1. Hero Section */}
         <Hero onShopClick={handleShopClick} onLookbookClick={handleLookbookClick} />
 
@@ -59,8 +68,10 @@ const MainStorefront: React.FC = () => {
 
 export default function App() {
   return (
-    <CartProvider>
-      <MainStorefront />
-    </CartProvider>
+    <ThemeProvider>
+      <CartProvider>
+        <MainStorefront />
+      </CartProvider>
+    </ThemeProvider>
   );
 }

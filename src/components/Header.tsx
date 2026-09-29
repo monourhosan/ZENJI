@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { ShoppingBag, Menu, X, ArrowUpRight, Sparkles, Moon, Sun } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useTheme } from '../context/ThemeContext';
 
 interface HeaderProps {
   onOpenCart: () => void;
@@ -9,6 +10,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ onOpenCart }) => {
   const { totalCount } = useCart();
+  const { theme, secondsRemaining, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showBanner, setShowBanner] = useState(true);
@@ -78,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCart }) => {
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#fbfbfb]/90 backdrop-blur-md border-b border-neutral-200/80 shadow-sm py-3.5'
+            ? 'glass-nav shadow-sm py-3.5'
             : 'bg-transparent py-5'
         }`}
       >
@@ -118,8 +120,30 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCart }) => {
             ))}
           </nav>
 
-          {/* Right Action Icons: Currency + Bag + Mobile Menu */}
-          <div className="flex items-center gap-4">
+          {/* Right Action Icons: 27s Day/Night Toggle + Collection Pill + Bag + Mobile Menu */}
+          <div className="flex items-center gap-3 sm:gap-4">
+            {/* 27-Second Night/Day Cycle Indicator Pill */}
+            <button
+              onClick={toggleTheme}
+              className={`flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider px-3 py-1.5 rounded-full border transition-all duration-300 shadow-sm hover:scale-105 active:scale-95 cursor-pointer ${
+                theme === 'night'
+                  ? 'bg-white/10 hover:bg-white/15 text-white border-white/20'
+                  : 'bg-white hover:bg-neutral-100 text-neutral-800 border-neutral-300'
+              }`}
+              title={`27s Cycle Active. Current: ${theme === 'night' ? 'Night' : 'Day'} mode. Click to toggle now.`}
+              aria-label={`Current theme is ${theme}. ${secondsRemaining} seconds until auto-switch.`}
+            >
+              {theme === 'night' ? (
+                <Moon className="w-3.5 h-3.5 text-[#ccff00] fill-[#ccff00]/30 animate-pulse" />
+              ) : (
+                <Sun className="w-3.5 h-3.5 text-amber-500 fill-amber-500/30" />
+              )}
+              <span className="font-bold">{theme === 'night' ? 'NIGHT' : 'DAY'}</span>
+              <span className="text-[10px] opacity-75 font-bold">
+                {secondsRemaining}s
+              </span>
+            </button>
+
             {/* VIP Drop Pill */}
             <a
               href="#collection"
@@ -178,9 +202,28 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCart }) => {
             </nav>
 
             <div className="mt-8 pt-6 border-t border-neutral-200 flex flex-col gap-4">
+              <button
+                onClick={toggleTheme}
+                className={`w-full py-3 px-4 rounded-lg flex items-center justify-between font-mono text-xs uppercase tracking-wider border transition-colors ${
+                  theme === 'night'
+                    ? 'bg-white/10 text-white border-white/20'
+                    : 'bg-neutral-100 text-neutral-900 border-neutral-200'
+                }`}
+              >
+                <div className="flex items-center gap-2">
+                  {theme === 'night' ? (
+                    <Moon className="w-4 h-4 text-[#ccff00]" />
+                  ) : (
+                    <Sun className="w-4 h-4 text-amber-500" />
+                  )}
+                  <span>THEME: {theme === 'night' ? 'NIGHT (SHIBUYA)' : 'DAY (TOKYO)'}</span>
+                </div>
+                <span className="font-bold text-[#ccff00]">{secondsRemaining}s</span>
+              </button>
+
               <div className="flex items-center justify-between text-xs text-neutral-500 font-mono">
                 <span>REGION: GLOBAL (USD $)</span>
-                <span className="text-neutral-900 font-bold">DROP 04 ACTIVE</span>
+                <span className="text-neutral-900 font-bold">27S AUTO-CYCLE</span>
               </div>
               <button
                 onClick={() => {
