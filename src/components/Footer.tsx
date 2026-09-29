@@ -50,34 +50,34 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer id="footer" className="bg-[#060606] text-white border-t border-white/10 pt-20 pb-12">
+    <footer id="footer" className="bg-[#f4f5f7] text-neutral-900 border-t border-neutral-200/90 pt-20 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Newsletter Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-16 border-b border-white/10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-16 border-b border-neutral-200/90 items-center">
           <div className="lg:col-span-6">
-            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#ccff00] block mb-2">
+            <span className="text-xs font-mono uppercase tracking-[0.25em] text-neutral-500 font-semibold block mb-2">
               INNER CIRCLE // PRIVILEGED ACCESS
             </span>
-            <h2 className="font-heading font-black text-2xl sm:text-4xl uppercase tracking-tight text-white mb-2">
+            <h2 className="font-heading font-black text-2xl sm:text-4xl uppercase tracking-tight text-neutral-950 mb-2">
               Unlock Private Drop Access
             </h2>
-            <p className="text-xs sm:text-sm text-neutral-400 font-mono max-w-md">
+            <p className="text-xs sm:text-sm text-neutral-600 font-mono max-w-md">
               Receive secret archive passkeys 48 hours prior to public releases, plus 10% off your initial purchase.
             </p>
           </div>
 
           <div className="lg:col-span-6">
             {isSubscribed ? (
-              <div className="p-4 rounded-xl bg-white/5 border border-[#ccff00]/30 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#ccff00] text-black flex items-center justify-center shrink-0">
+              <div className="p-4 rounded-xl bg-white border border-neutral-300 shadow-sm flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-neutral-950 text-white flex items-center justify-center shrink-0">
                   <Check className="w-4 h-4 stroke-[3]" />
                 </div>
                 <div>
-                  <p className="font-mono text-xs font-bold text-white uppercase tracking-wider">
+                  <p className="font-mono text-xs font-bold text-neutral-950 uppercase tracking-wider">
                     Access Granted. Welcome to ZENJI.
                   </p>
-                  <p className="font-mono text-[11px] text-[#ccff00]">
-                    Your code <span className="font-bold underline">ZENJI10</span> is active.
+                  <p className="font-mono text-[11px] text-neutral-600">
+                    Your code <span className="font-bold underline text-neutral-950">ZENJI10</span> is active.
                   </p>
                 </div>
               </div>
@@ -90,11 +90,11 @@ export const Footer: React.FC = () => {
                     placeholder="ENTER YOUR EMAIL"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 px-4 py-3 rounded-lg bg-white/5 border border-white/15 text-white font-mono text-xs uppercase placeholder:text-neutral-500 focus:outline-none focus:border-[#ccff00] transition-colors"
+                    className="flex-1 px-4 py-3 rounded-lg bg-white border border-neutral-300 text-neutral-900 font-mono text-xs uppercase placeholder:text-neutral-400 focus:outline-none focus:border-neutral-950 focus:ring-1 focus:ring-neutral-950 transition-colors shadow-sm"
                   />
                   <button
                     type="submit"
-                    className="px-6 py-3 bg-white hover:bg-[#ccff00] text-black font-mono text-xs uppercase tracking-widest font-black rounded-lg flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0"
+                    className="px-6 py-3 bg-neutral-950 hover:bg-neutral-800 text-white font-mono text-xs uppercase tracking-widest font-black rounded-lg flex items-center gap-2 transition-all duration-300 shadow-sm shrink-0"
                   >
                     <span>Subscribe</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -109,26 +109,26 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Footer Navigation Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-16 border-b border-white/10 text-xs font-mono">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-16 border-b border-neutral-200/90 text-xs font-mono">
           {/* Brand Info */}
           <div className="col-span-2 md:col-span-1 space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded bg-white text-black font-black text-base flex items-center justify-center font-heading">
+              <div className="w-7 h-7 rounded bg-neutral-950 text-white font-black text-base flex items-center justify-center font-heading">
                 Z
               </div>
-              <span className="font-heading font-black text-xl tracking-widest text-white">
+              <span className="font-heading font-black text-xl tracking-widest text-neutral-950">
                 ZENJI
               </span>
             </div>
-            <p className="text-neutral-400 text-xs leading-relaxed max-w-xs">
+            <p className="text-neutral-600 text-xs leading-relaxed max-w-xs">
               Autonomous streetwear design studio engineered for everyday movement and modern metropolitan life.
             </p>
-            <div className="flex items-center gap-3 text-neutral-400">
+            <div className="flex items-center gap-3 text-neutral-600">
               <a
                 href="https://www.instagram.com/zenji_shop/"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-white transition-colors p-1"
+                className="hover:text-neutral-950 transition-colors p-1"
                 aria-label="ZENJI Instagram"
               >
                 <InstagramIcon />
@@ -137,7 +137,7 @@ export const Footer: React.FC = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-white transition-colors p-1"
+                className="hover:text-neutral-950 transition-colors p-1"
                 aria-label="Twitter / X"
               >
                 <TwitterIcon />
@@ -146,7 +146,7 @@ export const Footer: React.FC = () => {
                 href="https://discord.com"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-white transition-colors p-1"
+                className="hover:text-neutral-950 transition-colors p-1"
                 aria-label="Discord Community"
               >
                 <DiscordIcon />
@@ -155,7 +155,7 @@ export const Footer: React.FC = () => {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-white transition-colors p-1"
+                className="hover:text-neutral-950 transition-colors p-1"
                 aria-label="YouTube Channel"
               >
                 <YoutubeIcon />
@@ -165,30 +165,30 @@ export const Footer: React.FC = () => {
 
           {/* Catalog */}
           <div>
-            <h3 className="font-bold text-white uppercase tracking-wider mb-4">Catalog</h3>
-            <ul className="space-y-2.5 text-neutral-400">
+            <h3 className="font-bold text-neutral-950 uppercase tracking-wider mb-4">Catalog</h3>
+            <ul className="space-y-2.5 text-neutral-600">
               <li>
-                <a href="#collection" onClick={(e) => scrollToSection(e, '#collection')} className="hover:text-white transition-colors">
+                <a href="#collection" onClick={(e) => scrollToSection(e, '#collection')} className="hover:text-neutral-950 transition-colors">
                   Drop 04 (Latest)
                 </a>
               </li>
               <li>
-                <a href="#collection" onClick={(e) => scrollToSection(e, '#collection')} className="hover:text-white transition-colors">
+                <a href="#collection" onClick={(e) => scrollToSection(e, '#collection')} className="hover:text-neutral-950 transition-colors">
                   Heavyweight Hoodies
                 </a>
               </li>
               <li>
-                <a href="#collection" onClick={(e) => scrollToSection(e, '#collection')} className="hover:text-white transition-colors">
+                <a href="#collection" onClick={(e) => scrollToSection(e, '#collection')} className="hover:text-neutral-950 transition-colors">
                   Mercerized Tees
                 </a>
               </li>
               <li>
-                <a href="#collection" onClick={(e) => scrollToSection(e, '#collection')} className="hover:text-white transition-colors">
+                <a href="#collection" onClick={(e) => scrollToSection(e, '#collection')} className="hover:text-neutral-950 transition-colors">
                   Ripstop Cargo
                 </a>
               </li>
               <li>
-                <a href="#collection" onClick={(e) => scrollToSection(e, '#collection')} className="hover:text-white transition-colors">
+                <a href="#collection" onClick={(e) => scrollToSection(e, '#collection')} className="hover:text-neutral-950 transition-colors">
                   Weatherproof Shells
                 </a>
               </li>
@@ -197,30 +197,30 @@ export const Footer: React.FC = () => {
 
           {/* Client Concierge */}
           <div>
-            <h3 className="font-bold text-white uppercase tracking-wider mb-4">Concierge</h3>
-            <ul className="space-y-2.5 text-neutral-400">
+            <h3 className="font-bold text-neutral-950 uppercase tracking-wider mb-4">Concierge</h3>
+            <ul className="space-y-2.5 text-neutral-600">
               <li>
-                <a href="#collection" className="hover:text-white transition-colors">
+                <a href="#collection" className="hover:text-neutral-950 transition-colors">
                   Order Tracking
                 </a>
               </li>
               <li>
-                <a href="#about" onClick={(e) => scrollToSection(e, '#about')} className="hover:text-white transition-colors">
+                <a href="#about" onClick={(e) => scrollToSection(e, '#about')} className="hover:text-neutral-950 transition-colors">
                   Size Guide & Matrix
                 </a>
               </li>
               <li>
-                <span className="hover:text-white transition-colors cursor-pointer">
+                <span className="hover:text-neutral-950 transition-colors cursor-pointer">
                   Global Shipping Info
                 </span>
               </li>
               <li>
-                <span className="hover:text-white transition-colors cursor-pointer">
+                <span className="hover:text-neutral-950 transition-colors cursor-pointer">
                   30-Day Returns Policy
                 </span>
               </li>
               <li>
-                <span className="hover:text-white transition-colors cursor-pointer">
+                <span className="hover:text-neutral-950 transition-colors cursor-pointer">
                   Care Instructions
                 </span>
               </li>
@@ -229,21 +229,21 @@ export const Footer: React.FC = () => {
 
           {/* Studio Atelier */}
           <div>
-            <h3 className="font-bold text-white uppercase tracking-wider mb-4">Atelier</h3>
-            <ul className="space-y-2.5 text-neutral-400">
+            <h3 className="font-bold text-neutral-950 uppercase tracking-wider mb-4">Atelier</h3>
+            <ul className="space-y-2.5 text-neutral-600">
               <li>
-                <a href="#about" onClick={(e) => scrollToSection(e, '#about')} className="hover:text-white transition-colors">
+                <a href="#about" onClick={(e) => scrollToSection(e, '#about')} className="hover:text-neutral-950 transition-colors">
                   Brand Philosophy
                 </a>
               </li>
               <li>
-                <a href="#lookbook" onClick={(e) => scrollToSection(e, '#lookbook')} className="hover:text-white transition-colors">
+                <a href="#lookbook" onClick={(e) => scrollToSection(e, '#lookbook')} className="hover:text-neutral-950 transition-colors">
                   Campaign Lookbook
                 </a>
               </li>
               <li>
-                <span className="text-[#ccff00] flex items-center gap-1.5">
-                  <Shield className="w-3.5 h-3.5" />
+                <span className="text-neutral-900 font-semibold flex items-center gap-1.5">
+                  <Shield className="w-3.5 h-3.5 text-neutral-900" />
                   <span>Wasmer Edge Static Deploy</span>
                 </span>
               </li>
@@ -262,9 +262,9 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-6">
-            <span className="hover:text-neutral-300 transition-colors cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-neutral-300 transition-colors cursor-pointer">Terms of Service</span>
-            <span className="text-neutral-400">Deployable via Wasmer Static Web Server</span>
+            <span className="hover:text-neutral-950 transition-colors cursor-pointer">Privacy Policy</span>
+            <span className="hover:text-neutral-950 transition-colors cursor-pointer">Terms of Service</span>
+            <span className="text-neutral-600">Deployable via Wasmer Static Web Server</span>
           </div>
         </div>
       </div>

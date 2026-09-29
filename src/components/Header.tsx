@@ -78,7 +78,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCart }) => {
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#080808]/90 backdrop-blur-md border-b border-white/10 shadow-2xl py-3.5'
+            ? 'bg-[#fbfbfb]/90 backdrop-blur-md border-b border-neutral-200/80 shadow-sm py-3.5'
             : 'bg-transparent py-5'
         }`}
       >
@@ -87,33 +87,33 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCart }) => {
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="group flex items-center gap-2.5 text-white tracking-tighter"
+            className="group flex items-center gap-2.5 text-neutral-950 tracking-tighter"
             aria-label="ZENJI Home"
           >
-            <div className="w-8 h-8 rounded bg-white text-black font-black text-lg flex items-center justify-center font-heading transition-transform group-hover:scale-105">
+            <div className="w-8 h-8 rounded bg-neutral-950 text-white font-black text-lg flex items-center justify-center font-heading transition-transform group-hover:scale-105 shadow-sm">
               Z
             </div>
             <div className="flex flex-col">
-              <span className="font-heading font-black text-xl sm:text-2xl tracking-widest text-white leading-none">
+              <span className="font-heading font-black text-xl sm:text-2xl tracking-widest text-neutral-950 leading-none">
                 ZENJI
               </span>
-              <span className="font-mono text-[9px] tracking-[0.28em] text-neutral-400 uppercase leading-tight">
+              <span className="font-mono text-[9px] tracking-[0.28em] text-neutral-500 uppercase leading-tight">
                 禅時 • TOKYO
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8 text-xs uppercase tracking-[0.2em] font-medium text-neutral-300">
+          <nav className="hidden md:flex items-center gap-8 text-xs uppercase tracking-[0.2em] font-medium text-neutral-600">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="relative py-1 text-neutral-300 hover:text-white transition-colors duration-200 group"
+                className="relative py-1 text-neutral-600 hover:text-neutral-950 transition-colors duration-200 group"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#ccff00] transition-all duration-200 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-neutral-950 transition-all duration-200 group-hover:w-full"></span>
               </a>
             ))}
           </nav>
@@ -124,22 +124,22 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCart }) => {
             <a
               href="#collection"
               onClick={(e) => handleNavClick(e, '#collection')}
-              className="hidden lg:flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-neutral-300 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full px-3 py-1.5 transition-all"
+              className="hidden lg:flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-neutral-700 bg-neutral-100 hover:bg-neutral-200/80 border border-neutral-200 rounded-full px-3 py-1.5 transition-all shadow-sm"
             >
-              <Sparkles className="w-3 h-3 text-[#ccff00]" />
+              <Sparkles className="w-3 h-3 text-neutral-900" />
               <span>AW26 Collection</span>
             </a>
 
             {/* Cart Button */}
             <button
               onClick={onOpenCart}
-              className="relative p-2.5 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-white transition-all hover:scale-105 active:scale-95 group"
+              className="relative p-2.5 rounded-full bg-white hover:bg-neutral-100 border border-neutral-200 text-neutral-900 shadow-sm transition-all hover:scale-105 active:scale-95 group"
               aria-label={`View Shopping Bag, ${totalCount} items`}
             >
-              <ShoppingBag className="w-5 h-5 text-white transition-transform group-hover:-translate-y-0.5" />
+              <ShoppingBag className="w-5 h-5 text-neutral-900 transition-transform group-hover:-translate-y-0.5" />
               {totalCount > 0 && (
                 <span
-                  className={`absolute -top-1 -right-1 min-w-[20px] h-[20px] px-1 bg-[#ccff00] text-black font-mono font-bold text-[10px] rounded-full flex items-center justify-center transition-transform ${
+                  className={`absolute -top-1 -right-1 min-w-[20px] h-[20px] px-1 bg-neutral-950 text-white font-mono font-bold text-[10px] rounded-full flex items-center justify-center transition-transform ${
                     badgeBump ? 'scale-125' : 'scale-100'
                   }`}
                 >
@@ -151,7 +151,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCart }) => {
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
+              className="md:hidden p-2 rounded-lg text-neutral-900 hover:bg-neutral-100 transition-colors"
               aria-label="Toggle navigation menu"
               aria-expanded={isMobileMenuOpen}
             >
@@ -162,32 +162,32 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCart }) => {
 
         {/* Mobile Navigation Drawer / Dropdown */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/10 px-6 py-8 transition-all animate-in slide-in-from-top-4 duration-200">
+          <div className="md:hidden bg-white/95 backdrop-blur-xl border-b border-neutral-200 px-6 py-8 transition-all animate-in slide-in-from-top-4 duration-200 shadow-xl">
             <nav className="flex flex-col gap-5 text-sm uppercase tracking-widest font-mono">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="flex items-center justify-between text-neutral-300 hover:text-white py-2 border-b border-white/5"
+                  className="flex items-center justify-between text-neutral-700 hover:text-neutral-950 py-2 border-b border-neutral-100"
                 >
                   <span>{link.name}</span>
-                  <ArrowUpRight className="w-4 h-4 text-neutral-500" />
+                  <ArrowUpRight className="w-4 h-4 text-neutral-400" />
                 </a>
               ))}
             </nav>
 
-            <div className="mt-8 pt-6 border-t border-white/10 flex flex-col gap-4">
-              <div className="flex items-center justify-between text-xs text-neutral-400 font-mono">
+            <div className="mt-8 pt-6 border-t border-neutral-200 flex flex-col gap-4">
+              <div className="flex items-center justify-between text-xs text-neutral-500 font-mono">
                 <span>REGION: GLOBAL (USD $)</span>
-                <span className="text-[#ccff00]">DROP 04 ACTIVE</span>
+                <span className="text-neutral-900 font-bold">DROP 04 ACTIVE</span>
               </div>
               <button
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   onOpenCart();
                 }}
-                className="w-full py-3 bg-white text-black font-bold uppercase tracking-wider text-xs rounded flex items-center justify-center gap-2 hover:bg-neutral-200 transition-colors"
+                className="w-full py-3 bg-neutral-950 text-white font-bold uppercase tracking-wider text-xs rounded flex items-center justify-center gap-2 hover:bg-neutral-800 transition-colors shadow-md"
               >
                 <ShoppingBag className="w-4 h-4" />
                 <span>Open Shopping Bag ({totalCount})</span>

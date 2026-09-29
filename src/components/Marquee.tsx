@@ -12,14 +12,14 @@ export const Marquee: React.FC = () => {
   ];
 
   return (
-    <div className="relative py-4 bg-[#0e0e0e] border-y border-white/10 overflow-hidden select-none">
+    <div className="relative py-4 bg-white border-y border-neutral-200/90 overflow-hidden select-none shadow-sm">
       <div className="flex whitespace-nowrap animate-marquee">
         {[...items, ...items].map((text, idx) => (
           <div key={idx} className="flex items-center gap-8 mx-4">
-            <span className="font-heading font-black text-xs sm:text-sm tracking-[0.25em] uppercase text-neutral-300">
+            <span className="font-heading font-black text-xs sm:text-sm tracking-[0.25em] uppercase text-neutral-800">
               {text}
             </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ccff00] inline-block"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-neutral-950 inline-block"></span>
           </div>
         ))}
       </div>

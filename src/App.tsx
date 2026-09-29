@@ -24,7 +24,7 @@ const MainStorefront: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#080808] text-[#f3f3f3] selection:bg-white selection:text-black">
+    <div className="min-h-screen bg-[#fbfbfb] text-[#121212] selection:bg-neutral-950 selection:text-white">
       {/* Header */}
       <Header onOpenCart={openCart} />
 

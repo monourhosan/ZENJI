@@ -28,13 +28,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
 
   return (
     <div
-      className="group relative flex flex-col bg-[#0e0e0e] border border-white/10 hover:border-white/25 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-black/80"
+      className="group relative flex flex-col bg-white border border-neutral-200/90 hover:border-neutral-400 rounded-xl overflow-hidden transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image Container with Hover Zoom & Alternate Angle */}
       <div
-        className="relative aspect-[3/4] w-full overflow-hidden bg-[#161616] cursor-pointer"
+        className="relative aspect-[3/4] w-full overflow-hidden bg-neutral-100 cursor-pointer"
         onClick={() => onQuickView(product)}
       >
         {/* Primary Image */}
@@ -63,12 +63,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
         {product.tag && (
           <div className="absolute top-3 left-3 z-10">
             <span
-              className={`px-2.5 py-1 text-[10px] font-mono tracking-widest uppercase font-bold rounded backdrop-blur-md border ${
+              className={`px-2.5 py-1 text-[10px] font-mono tracking-widest uppercase font-bold rounded shadow-sm border ${
                 product.tag === 'LIMITED DROP'
-                  ? 'bg-red-500/20 text-red-300 border-red-500/30'
+                  ? 'bg-rose-50 text-rose-700 border-rose-200'
                   : product.tag === 'BESTSELLER'
-                  ? 'bg-[#ccff00]/15 text-[#ccff00] border-[#ccff00]/30'
-                  : 'bg-white/15 text-white border-white/20'
+                  ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                  : 'bg-neutral-950 text-white border-neutral-900'
               }`}
             >
               {product.tag}
@@ -83,41 +83,41 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
               e.stopPropagation();
               onQuickView(product);
             }}
-            className="w-full py-2.5 px-4 bg-black/80 hover:bg-black text-white text-xs font-mono uppercase tracking-wider rounded backdrop-blur-md border border-white/20 flex items-center justify-center gap-2 transition-all shadow-lg hover:border-white/40"
+            className="w-full py-2.5 px-4 bg-neutral-950/90 hover:bg-neutral-950 text-white text-xs font-mono uppercase tracking-wider rounded backdrop-blur-md border border-neutral-800 flex items-center justify-center gap-2 transition-all shadow-lg"
           >
-            <Eye className="w-3.5 h-3.5 text-[#ccff00]" />
+            <Eye className="w-3.5 h-3.5 text-white" />
             <span>Quick View & Specs</span>
           </button>
         </div>
       </div>
 
       {/* Product Details Section */}
-      <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between">
+      <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between bg-white">
         <div>
           {/* Category & Weight Pill */}
-          <div className="flex items-center justify-between text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1.5">
+          <div className="flex items-center justify-between text-[10px] font-mono text-neutral-500 uppercase tracking-widest mb-1.5">
             <span>{product.category}</span>
-            <span className="text-neutral-500">{product.weight.split(' ')[0]} {product.weight.split(' ')[1]}</span>
+            <span className="text-neutral-400">{product.weight.split(' ')[0]} {product.weight.split(' ')[1]}</span>
           </div>
 
           {/* Product Name */}
           <h3
             onClick={() => onQuickView(product)}
-            className="font-heading font-bold text-base sm:text-lg text-white group-hover:text-[#ccff00] transition-colors cursor-pointer truncate"
+            className="font-heading font-bold text-base sm:text-lg text-neutral-950 group-hover:text-black transition-colors cursor-pointer truncate"
           >
             {product.name}
           </h3>
 
           {/* Subtitle */}
-          <p className="text-xs text-neutral-400 font-mono truncate mb-3">
+          <p className="text-xs text-neutral-500 font-mono truncate mb-3">
             {product.subtitle}
           </p>
 
           {/* Price */}
           <div className="flex items-baseline gap-2 mb-4">
-            <span className="font-mono text-lg font-bold text-white">${product.price}</span>
+            <span className="font-mono text-lg font-bold text-neutral-950">${product.price}</span>
             {product.originalPrice && (
-              <span className="font-mono text-xs text-neutral-500 line-through">
+              <span className="font-mono text-xs text-neutral-400 line-through">
                 ${product.originalPrice}
               </span>
             )}
@@ -126,9 +126,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
 
         {/* Size Selection Pill Bar */}
         <div>
-          <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400 uppercase mb-2">
+          <div className="flex items-center justify-between text-[11px] font-mono text-neutral-500 uppercase mb-2">
             <span>Size:</span>
-            <span className="text-white font-bold">{selectedSize}</span>
+            <span className="text-neutral-950 font-bold">{selectedSize}</span>
           </div>
           <div className="flex flex-wrap gap-1.5 mb-4">
             {product.sizes.map((size) => (
@@ -140,8 +140,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
                 }}
                 className={`min-w-[34px] py-1 px-2 text-[11px] font-mono uppercase font-semibold rounded border transition-all ${
                   selectedSize === size
-                    ? 'bg-white text-black border-white shadow'
-                    : 'bg-white/5 text-neutral-300 border-white/10 hover:border-white/30 hover:bg-white/10'
+                    ? 'bg-neutral-950 text-white border-neutral-950 shadow-sm'
+                    : 'bg-neutral-50 text-neutral-700 border-neutral-200 hover:border-neutral-400 hover:bg-white'
                 }`}
                 aria-label={`Select size ${size}`}
               >
@@ -153,7 +153,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
           {/* Color Selector Pills if multiple colors */}
           {product.colors.length > 1 && (
             <div className="flex items-center gap-1.5 mb-4">
-              <span className="text-[10px] font-mono text-neutral-400 uppercase mr-1">Color:</span>
+              <span className="text-[10px] font-mono text-neutral-500 uppercase mr-1">Color:</span>
               {product.colors.map((c) => (
                 <button
                   key={c.name}
@@ -162,7 +162,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
                     setSelectedColor(c.name);
                   }}
                   className={`w-3.5 h-3.5 rounded-full border transition-all ${
-                    selectedColor === c.name ? 'ring-2 ring-[#ccff00] ring-offset-1 ring-offset-[#0e0e0e]' : 'opacity-60 hover:opacity-100'
+                    selectedColor === c.name ? 'ring-2 ring-neutral-950 ring-offset-1 ring-offset-white' : 'opacity-70 hover:opacity-100'
                   }`}
                   style={{ backgroundColor: c.hex }}
                   title={c.name}
@@ -176,10 +176,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
           <button
             onClick={handleAddToCart}
             disabled={isAdded}
-            className={`w-full py-3 px-4 font-mono text-xs uppercase tracking-widest font-bold rounded flex items-center justify-center gap-2 transition-all duration-300 ${
+            className={`w-full py-3 px-4 font-mono text-xs uppercase tracking-widest font-bold rounded flex items-center justify-center gap-2 transition-all duration-300 shadow-md ${
               isAdded
-                ? 'bg-[#ccff00] text-black shadow-[0_0_15px_rgba(204,255,0,0.4)]'
-                : 'bg-white/10 hover:bg-white text-white hover:text-black border border-white/15 hover:border-white'
+                ? 'bg-emerald-600 text-white'
+                : 'bg-neutral-950 hover:bg-neutral-800 text-white'
             }`}
           >
             {isAdded ? (

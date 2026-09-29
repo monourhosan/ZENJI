@@ -37,15 +37,15 @@ export const ProductGrid: React.FC = () => {
   return (
     <section id="collection" className="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-white/10 pb-8">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-neutral-200 pb-8">
         <div>
-          <div className="flex items-center gap-2 text-[#ccff00] text-xs font-mono uppercase tracking-[0.25em] mb-2">
+          <div className="flex items-center gap-2 text-neutral-600 text-xs font-mono uppercase tracking-[0.25em] mb-2 font-semibold">
             <span>SEASON 01 // ARCHIVE COLLECTION</span>
           </div>
-          <h2 className="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight text-white">
+          <h2 className="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight text-neutral-950">
             Curated Silhouettes
           </h2>
-          <p className="text-neutral-400 text-sm max-w-xl mt-2 font-normal">
+          <p className="text-neutral-600 text-sm max-w-xl mt-2 font-normal">
             Precision-cut streetwear essentials crafted from Japanese heavyweight fabrics, finished with weather-resistant technical treatments.
           </p>
         </div>
@@ -53,21 +53,21 @@ export const ProductGrid: React.FC = () => {
         {/* Filter Controls Bar */}
         <div className="flex flex-wrap items-center gap-3">
           {/* Sort Dropdown */}
-          <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-neutral-300">
-            <ArrowUpDown className="w-3.5 h-3.5 text-neutral-400" />
+          <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white border border-neutral-200 text-xs font-mono text-neutral-800 shadow-sm">
+            <ArrowUpDown className="w-3.5 h-3.5 text-neutral-500" />
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="bg-transparent text-white focus:outline-none cursor-pointer uppercase text-xs"
+              className="bg-transparent text-neutral-800 focus:outline-none cursor-pointer uppercase text-xs"
               aria-label="Sort products"
             >
-              <option value="featured" className="bg-[#141414] text-white">Sort: Featured</option>
-              <option value="price-asc" className="bg-[#141414] text-white">Price: Low to High</option>
-              <option value="price-desc" className="bg-[#141414] text-white">Price: High to Low</option>
+              <option value="featured" className="bg-white text-neutral-900">Sort: Featured</option>
+              <option value="price-asc" className="bg-white text-neutral-900">Price: Low to High</option>
+              <option value="price-desc" className="bg-white text-neutral-900">Price: High to Low</option>
             </select>
           </div>
 
-          <div className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-neutral-400">
+          <div className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg bg-white border border-neutral-200 text-xs font-mono text-neutral-600 shadow-sm">
             <SlidersHorizontal className="w-3.5 h-3.5" />
             <span>{filteredProducts.length} Pieces</span>
           </div>
@@ -88,14 +88,14 @@ export const ProductGrid: React.FC = () => {
               onClick={() => setSelectedCategory(cat.value)}
               className={`whitespace-nowrap px-4 py-2.5 rounded-full font-mono text-xs uppercase tracking-wider transition-all duration-200 border flex items-center gap-2 ${
                 isActive
-                  ? 'bg-white text-black border-white font-bold shadow-lg'
-                  : 'bg-white/5 text-neutral-300 border-white/10 hover:border-white/25 hover:bg-white/10'
+                  ? 'bg-neutral-950 text-white border-neutral-950 font-bold shadow-md'
+                  : 'bg-white text-neutral-700 border-neutral-200 hover:border-neutral-400 hover:bg-neutral-50 shadow-sm'
               }`}
             >
               <span>{cat.label}</span>
               <span
                 className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
-                  isActive ? 'bg-black text-white' : 'bg-white/10 text-neutral-400'
+                  isActive ? 'bg-white/20 text-white' : 'bg-neutral-100 text-neutral-600'
                 }`}
               >
                 {count}

@@ -32,20 +32,20 @@ export const LookbookGallery: React.FC = () => {
   ];
 
   return (
-    <section id="lookbook" className="py-24 sm:py-32 bg-[#080808] border-t border-white/10">
+    <section id="lookbook" className="py-24 sm:py-32 bg-[#fbfbfb] border-t border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="flex items-center gap-2 text-[#ccff00] text-xs font-mono uppercase tracking-[0.25em] mb-2">
-              <Camera className="w-3.5 h-3.5" />
+            <div className="flex items-center gap-2 text-neutral-600 text-xs font-mono uppercase tracking-[0.25em] mb-2 font-semibold">
+              <Camera className="w-3.5 h-3.5 text-neutral-900" />
               <span>Campaign Visuals // Drop 04</span>
             </div>
-            <h2 className="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight text-white">
+            <h2 className="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight text-neutral-950">
               Shibuya Noir Lookbook
             </h2>
           </div>
-          <p className="text-neutral-400 text-xs sm:text-sm font-mono max-w-md">
+          <p className="text-neutral-600 text-xs sm:text-sm font-mono max-w-md">
             Documenting the interplay between brutalist architecture, midnight downpours, and architectural drapery.
           </p>
         </div>
@@ -55,7 +55,7 @@ export const LookbookGallery: React.FC = () => {
           {lookbookItems.map((item) => (
             <div
               key={item.id}
-              className="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#121212] border border-white/10 hover:border-white/30 cursor-pointer transition-all duration-500 shadow-xl"
+              className="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200 hover:border-neutral-400 cursor-pointer transition-all duration-500 shadow-md hover:shadow-2xl"
               onClick={() => setActiveImage(item.image)}
             >
               <img
@@ -64,22 +64,22 @@ export const LookbookGallery: React.FC = () => {
                 className="w-full h-full object-cover object-center filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
 
               {/* Card Meta Content */}
               <div className="absolute inset-x-5 bottom-5 flex flex-col justify-end">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#ccff00] mb-1">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-white/80 mb-1">
                   {item.location}
                 </span>
                 <h3 className="font-heading font-bold text-xl uppercase tracking-tight text-white mb-0.5">
                   {item.title}
                 </h3>
-                <p className="text-xs text-neutral-300 font-mono mb-3">
+                <p className="text-xs text-neutral-200 font-mono mb-3">
                   {item.subtitle}
                 </p>
 
                 <div className="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Maximize2 className="w-3.5 h-3.5 text-[#ccff00]" />
+                  <Maximize2 className="w-3.5 h-3.5 text-white" />
                   <span>Enlarge Still</span>
                 </div>
               </div>

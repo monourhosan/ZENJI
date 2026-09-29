@@ -30,11 +30,11 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({ isOpen, onClose,
 
   return (
     <div
-      className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-lg bg-[#121212] border border-white/10 rounded-xl p-6 sm:p-8 shadow-2xl text-white"
+        className="relative w-full max-w-lg bg-white border border-neutral-200 rounded-xl p-6 sm:p-8 shadow-2xl text-neutral-900"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
@@ -42,31 +42,31 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({ isOpen, onClose,
       >
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors"
+          className="absolute top-5 right-5 p-1 rounded-full text-neutral-400 hover:text-black hover:bg-neutral-100 transition-colors"
           aria-label="Close size guide"
         >
           <X className="w-5 h-5" />
         </button>
 
-        <div className="flex items-center gap-2 mb-2 text-[#ccff00]">
+        <div className="flex items-center gap-2 mb-2 text-neutral-950 font-semibold">
           <Ruler className="w-4 h-4" />
           <span className="text-xs font-mono uppercase tracking-widest">Sizing Specifications</span>
         </div>
 
-        <h3 className="font-heading text-2xl font-bold uppercase tracking-tight mb-2">
+        <h3 className="font-heading text-2xl font-bold uppercase tracking-tight text-neutral-950 mb-2">
           {isBottom ? 'Trouser & Cargo Matrix' : 'Boxy Silhouette Matrix'}
         </h3>
-        <p className="text-xs text-neutral-400 mb-6">
+        <p className="text-xs text-neutral-600 mb-6">
           ZENJI silhouettes feature an intentional relaxed street drape. For an exaggerated streetwear look, take your regular size. For a tailored fit, size down one step.
         </p>
 
         {/* Unit Toggle */}
         <div className="flex justify-end mb-4">
-          <div className="inline-flex rounded-lg bg-white/5 p-1 border border-white/10 font-mono text-xs">
+          <div className="inline-flex rounded-lg bg-neutral-100 p-1 border border-neutral-200 font-mono text-xs">
             <button
               onClick={() => setUnit('in')}
               className={`px-3 py-1 rounded transition-colors ${
-                unit === 'in' ? 'bg-white text-black font-bold' : 'text-neutral-400 hover:text-white'
+                unit === 'in' ? 'bg-neutral-950 text-white font-bold shadow-sm' : 'text-neutral-600 hover:text-neutral-900'
               }`}
             >
               INCHES
@@ -74,7 +74,7 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({ isOpen, onClose,
             <button
               onClick={() => setUnit('cm')}
               className={`px-3 py-1 rounded transition-colors ${
-                unit === 'cm' ? 'bg-white text-black font-bold' : 'text-neutral-400 hover:text-white'
+                unit === 'cm' ? 'bg-neutral-950 text-white font-bold shadow-sm' : 'text-neutral-600 hover:text-neutral-900'
               }`}
             >
               CM
@@ -86,7 +86,7 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({ isOpen, onClose,
         <div className="overflow-x-auto">
           <table className="w-full text-left font-mono text-xs border-collapse">
             <thead>
-              <tr className="border-b border-white/15 text-neutral-400">
+              <tr className="border-b border-neutral-200 text-neutral-500 bg-neutral-50">
                 <th className="py-2.5 px-3">SIZE</th>
                 {isBottom ? (
                   <>
@@ -106,29 +106,29 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({ isOpen, onClose,
             <tbody>
               {isBottom
                 ? bottomsData.map((row) => (
-                    <tr key={row.size} className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                      <td className="py-3 px-3 font-bold text-white">{row.size}</td>
-                      <td className="py-3 px-3 text-neutral-300">
+                    <tr key={row.size} className="border-b border-neutral-100 hover:bg-neutral-50 transition-colors">
+                      <td className="py-3 px-3 font-bold text-neutral-950">{row.size}</td>
+                      <td className="py-3 px-3 text-neutral-700">
                         {unit === 'in' ? `${row.waistIn}"` : `${row.waistCm} cm`}
                       </td>
-                      <td className="py-3 px-3 text-neutral-300">
+                      <td className="py-3 px-3 text-neutral-700">
                         {unit === 'in' ? `${row.inseamIn}"` : `${row.inseamCm} cm`}
                       </td>
-                      <td className="py-3 px-3 text-neutral-300">
+                      <td className="py-3 px-3 text-neutral-700">
                         {unit === 'in' ? `${row.legOpeningIn}"` : `${row.legOpeningCm} cm`}
                       </td>
                     </tr>
                   ))
                 : topsData.map((row) => (
-                    <tr key={row.size} className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                      <td className="py-3 px-3 font-bold text-white">{row.size}</td>
-                      <td className="py-3 px-3 text-neutral-300">
+                    <tr key={row.size} className="border-b border-neutral-100 hover:bg-neutral-50 transition-colors">
+                      <td className="py-3 px-3 font-bold text-neutral-950">{row.size}</td>
+                      <td className="py-3 px-3 text-neutral-700">
                         {unit === 'in' ? `${row.chestIn}"` : `${row.chestCm} cm`}
                       </td>
-                      <td className="py-3 px-3 text-neutral-300">
+                      <td className="py-3 px-3 text-neutral-700">
                         {unit === 'in' ? `${row.lengthIn}"` : `${row.lengthCm} cm`}
                       </td>
-                      <td className="py-3 px-3 text-neutral-300">
+                      <td className="py-3 px-3 text-neutral-700">
                         {unit === 'in' ? `${row.shoulderIn}"` : `${row.shoulderCm} cm`}
                       </td>
                     </tr>
@@ -137,9 +137,9 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({ isOpen, onClose,
           </table>
         </div>
 
-        <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+        <div className="mt-6 pt-4 border-t border-neutral-200 flex items-center justify-between text-[11px] text-neutral-500 font-mono">
           <span>MODEL: 6'1" / 185CM WEARING SIZE L</span>
-          <button onClick={onClose} className="text-[#ccff00] hover:underline uppercase">
+          <button onClick={onClose} className="text-neutral-950 font-bold hover:underline uppercase">
             Close Guide
           </button>
         </div>
