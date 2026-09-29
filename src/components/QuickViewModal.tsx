@@ -81,7 +81,7 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, onClose
             <div className="relative aspect-[4/5] sm:aspect-square md:aspect-auto md:h-full overflow-hidden bg-[#181818]">
               <img
                 src={product.images[selectedImageIndex]}
-                alt={`${product.name} - View ${selectedImageIndex + 1}`}
+                alt={`${product.name} - worn by authentic Bangladeshi model (angle ${selectedImageIndex + 1})`}
                 className="w-full h-full object-cover object-center transition-all duration-500"
               />
               {product.tag && (
@@ -101,7 +101,11 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, onClose
                     selectedImageIndex === idx ? 'border-[#ccff00] scale-105' : 'border-white/15 opacity-60 hover:opacity-100'
                   }`}
                 >
-                  <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
+                  <img
+                    src={img}
+                    alt={`${product.name} thumbnail ${idx + 1} with authentic Bangladeshi model`}
+                    className="w-full h-full object-cover"
+                  />
                 </button>
               ))}
             </div>

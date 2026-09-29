@@ -12,8 +12,8 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick, onLookbookClick }) => {
       {/* Background Editorial Imagery with Dark Cinematic Vignette */}
       <div className="absolute inset-0 z-0 select-none">
         <img
-          src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=2000&q=85"
-          alt="ZENJI Editorial Streetwear Campaign"
+          src="/images/bangladeshi-streetwear-hero.webp"
+          alt="Authentic Bangladeshi streetwear model walking through Dhaka city streets at night in oversized minimalist hoodie"
           className="w-full h-full object-cover object-center scale-105 animate-pulse duration-[10000ms]"
           loading="eager"
         />

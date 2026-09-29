@@ -69,8 +69,8 @@ export const BrandStory: React.FC = () => {
               {/* Primary High Fashion Portrait */}
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5] border border-white/15 shadow-2xl bg-[#141414]">
                 <img
-                  src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80"
-                  alt="ZENJI Editorial Studio Model"
+                  src="/images/bangladeshi-brand-story-model.webp"
+                  alt="Authentic Bangladeshi high-fashion model wearing minimalist architectural luxury streetwear"
                   className="w-full h-full object-cover object-center filter grayscale contrast-110 hover:grayscale-0 transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>

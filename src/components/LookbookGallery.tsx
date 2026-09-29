@@ -10,21 +10,24 @@ export const LookbookGallery: React.FC = () => {
       title: 'Monolith Silhouette',
       subtitle: 'Oversized Hoodie & Heavyweight Beanie',
       location: 'Shibuya Underpass // 01:24 AM',
-      image: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=1200&q=80',
+      image: '/images/bangladeshi-lookbook-monolith.webp',
+      alt: 'Bangladeshi model wearing Monolith oversized hoodie and heavyweight knit beanie in Dhaka underpass',
     },
     {
       id: 'look-2',
       title: 'Tactical Ergonomics',
       subtitle: 'Midnight Street Jacket & Urban Cargo Pants',
       location: 'Ginza High-Rise Brutalism',
-      image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=80',
+      image: '/images/bangladeshi-lookbook-tactical.webp',
+      alt: 'Bangladeshi female streetwear model wearing tactical storm jacket and urban cargo trousers in Dhaka',
     },
     {
       id: 'look-3',
       title: 'Raw Concrete Contrast',
       subtitle: 'Shadow Essential Tee in Bone White',
       location: 'Berlin Mitte Atelier Corridor',
-      image: 'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=80',
+      image: '/images/bangladeshi-lookbook-tee.webp',
+      alt: 'Bangladeshi designer wearing bone white shadow essential boxy streetwear tee in Dhaka design atelier',
     },
   ];
 
@@ -57,7 +60,7 @@ export const LookbookGallery: React.FC = () => {
             >
               <img
                 src={item.image}
-                alt={item.title}
+                alt={item.alt || item.title}
                 className="w-full h-full object-cover object-center filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                 loading="lazy"
               />
@@ -100,7 +103,7 @@ export const LookbookGallery: React.FC = () => {
           </button>
           <img
             src={activeImage}
-            alt="ZENJI Lookbook Expanded Still"
+            alt={lookbookItems.find((item) => item.image === activeImage)?.alt || 'Bangladeshi streetwear editorial lookbook expanded still'}
             className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl border border-white/20"
           />
         </div>

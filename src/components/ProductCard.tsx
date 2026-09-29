@@ -40,7 +40,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
         {/* Primary Image */}
         <img
           src={product.images[0]}
-          alt={product.name}
+          alt={`${product.name} - worn by authentic Bangladeshi streetwear model`}
           className={`w-full h-full object-cover object-center transition-all duration-700 ease-out ${
             isHovered && product.images[1] ? 'opacity-0 scale-105' : 'opacity-100 scale-100'
           }`}
@@ -51,7 +51,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
         {product.images[1] && (
           <img
             src={product.images[1]}
-            alt={`${product.name} alternate view`}
+            alt={`${product.name} alternate angle on authentic Bangladeshi streetwear model`}
             className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 ease-out ${
               isHovered ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
             }`}

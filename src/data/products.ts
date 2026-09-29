@@ -9,8 +9,8 @@ export const PRODUCTS: Product[] = [
     originalPrice: 110,
     category: 'tops',
     images: [
-      'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=900&q=80',
+      '/images/bangladeshi-oversized-hoodie-front.webp',
+      '/images/bangladeshi-oversized-hoodie-side.webp',
     ],
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
@@ -40,8 +40,8 @@ export const PRODUCTS: Product[] = [
     originalPrice: 55,
     category: 'tops',
     images: [
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80',
+      '/images/bangladeshi-essential-tee-front.webp',
+      '/images/bangladeshi-essential-tee-angle.webp',
     ],
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
@@ -71,8 +71,8 @@ export const PRODUCTS: Product[] = [
     originalPrice: 135,
     category: 'bottoms',
     images: [
-      'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=900&q=80',
+      '/images/bangladeshi-cargo-pants-front.webp',
+      '/images/bangladeshi-cargo-pants-motion.webp',
     ],
     sizes: ['30', '32', '34', '36'],
     colors: [
@@ -102,8 +102,8 @@ export const PRODUCTS: Product[] = [
     originalPrice: 180,
     category: 'outerwear',
     images: [
-      'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?auto=format&fit=crop&w=900&q=80',
+      '/images/bangladeshi-street-jacket-front.webp',
+      '/images/bangladeshi-street-jacket-angle.webp',
     ],
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
@@ -131,8 +131,8 @@ export const PRODUCTS: Product[] = [
     price: 125,
     category: 'outerwear',
     images: [
-      'https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80',
+      '/images/bangladeshi-tactical-vest-front.webp',
+      '/images/bangladeshi-tactical-vest-angle.webp',
     ],
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
@@ -159,8 +159,8 @@ export const PRODUCTS: Product[] = [
     price: 38,
     category: 'accessories',
     images: [
-      'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&w=900&q=80',
+      '/images/bangladeshi-beanie-portrait.webp',
+      '/images/bangladeshi-beanie-profile.webp',
     ],
     sizes: ['ONE SIZE'],
     colors: [
@@ -189,8 +189,8 @@ export const PRODUCTS: Product[] = [
     price: 62,
     category: 'tops',
     images: [
-      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=900&q=80',
+      '/images/bangladeshi-longsleeve-front.webp',
+      '/images/bangladeshi-longsleeve-angle.webp',
     ],
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
@@ -216,8 +216,8 @@ export const PRODUCTS: Product[] = [
     price: 75,
     category: 'accessories',
     images: [
-      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=80',
+      '/images/bangladeshi-crossbody-bag-front.webp',
+      '/images/bangladeshi-crossbody-bag-detail.webp',
     ],
     sizes: ['ONE SIZE'],
     colors: [

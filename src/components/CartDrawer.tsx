@@ -146,7 +146,7 @@ export const CartDrawer: React.FC = () => {
                 <div className="w-20 h-24 rounded-lg overflow-hidden bg-[#1a1a1a] shrink-0 border border-white/10">
                   <img
                     src={item.product.images[0]}
-                    alt={item.product.name}
+                    alt={`${item.product.name} worn by Bangladeshi model`}
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
