@@ -237,6 +237,8 @@ env = { "SERVER_ROOT" = "/public", "SERVER_PORT" = "80" }
 
 ```text
 ZENJI/
+├── db/                        # Database schemas & migrations
+│   └── schema.sql             # Relational PostgreSQL/SQLite tables & anti-cheat audit
 ├── dist/                      # Static production output (for Wasmer)
 │   ├── index.html
 │   └── assets/
@@ -244,13 +246,13 @@ ZENJI/
 │       └── index-*.js
 ├── public/                    # Static assets & favicons
 ├── src/
-│   ├── components/            # Modular React UI components
+│   ├── components/            # Modular Storefront UI components
 │   │   ├── BrandStory.tsx     # Editorial manifesto & atelier story
 │   │   ├── CartDrawer.tsx     # Slide-over shopping bag with qty & promo
 │   │   ├── CheckoutModal.tsx  # Simulated order checkout & confirmation
-│   │   ├── Footer.tsx         # Newsletter signup & social channels
-│   │   ├── Header.tsx         # Sticky navigation, logo, cart indicator
-│   │   ├── Hero.tsx           # Full-bleed fashion hero banner & specs
+│   │   ├── Footer.tsx         # Newsletter signup, social channels & Zen Flow link
+│   │   ├── Header.tsx         # Sticky navigation, logo, cart indicator & Zen Flow trigger
+│   │   ├── Hero.tsx           # Full-bleed fashion hero banner & Zen Flow callout
 │   │   ├── LookbookGallery.tsx# Campaign lookbook & enlarged lightbox
 │   │   ├── Marquee.tsx        # Infinite streetwear ticker tape
 │   │   ├── ProductCard.tsx    # Interactive product card with size pills
@@ -258,17 +260,36 @@ ZENJI/
 │   │   ├── QuickViewModal.tsx # Product details & thumbnail gallery
 │   │   ├── SizeGuideModal.tsx # Inches/cm measurement charts
 │   │   └── ToastContainer.tsx # Non-intrusive floating feedback toasts
+│   ├── features/
+│   │   └── zen-flow/          # Zen Flow Challenge daily gamified mindfulness
+│   │       ├── GameCanvas.tsx # 60 FPS Canvas with particles, waves & Zen Energy Orb
+│   │       ├── Leaderboard.tsx# Today's Zen Masters podium, ranks & history archive
+│   │       ├── RewardCard.tsx # Scalable rewards display & VIP coupon redemption
+│   │       ├── ScoreBoard.tsx # Dynamic score, combo multiplier & mute toggle
+│   │       ├── Timer.tsx      # Circular SVG breathing countdown meter
+│   │       ├── UserProfileCard.tsx # Zen Level progression & player statistics
+│   │       ├── ZenAudio.ts    # Pure Web Audio synthesized 432Hz/528Hz meditation sound
+│   │       ├── ZenFlowGame.tsx# Game coordinator managing game loop & screens
+│   │       ├── ZenFlowModal.tsx# Accessible dialog wrapper with backdrop blur
+│   │       ├── animations.css # Object spawn, glow & combo keyframes
+│   │       ├── types.ts       # Feature-specific component interfaces
+│   │       └── index.ts       # Clean public module export
 │   ├── context/
 │   │   └── CartContext.tsx    # Global cart state, calculations & toasts
 │   ├── data/
 │   │   └── products.ts        # Comprehensive mock product catalog
+│   ├── services/
+│   │   ├── zenFlowService.ts  # Authoritative anti-cheat & scoring engine
+│   │   └── zenFlowService.test.ts # Automated test suite for anti-cheat & scoring
 │   ├── types/
-│   │   └── index.ts           # Strict TypeScript data models
-│   ├── App.tsx                # App root layout assembler
+│   │   ├── index.ts           # Storefront product & cart data models
+│   │   └── zenFlow.ts         # Zen Flow domain models & relational entities
+│   ├── App.tsx                # App root layout assembler & Zen Flow modal coordinator
 │   ├── index.css              # Tailwind v4 theme, fonts, custom styles
 │   └── main.tsx               # React application entry point
 ├── index.html                 # HTML template with SEO tags & Google Fonts
-├── package.json               # Dependencies & build scripts
+├── package.json               # Dependencies, build scripts & test runner
+├── tsconfig.app.json          # TypeScript compiler configuration
 ├── vite.config.ts             # Vite configuration with Tailwind CSS v4
 ├── wasmer.toml                # Wasmer Edge static web server deployment
 └── README.md                  # Complete documentation
