@@ -1,0 +1,136 @@
+/* ============================================================================
+   ZENJI: ZEN FLOW CHALLENGE — CALM AESTHETIC ANIMATIONS
+   Designed for mindful interaction, high-FPS responsiveness, & accessibility
+   ============================================================================ */
+
+@keyframes zenSpawn {
+  0% {
+    transform: scale(0.4) rotate(-8deg);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  65% {
+    transform: scale(1.08) rotate(2deg);
+    opacity: 0.95;
+    filter: blur(0px);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes zenDisappear {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.6) translateY(-10px);
+    opacity: 0;
+    filter: blur(3px);
+  }
+}
+
+@keyframes zenFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+@keyframes zenOrbBreathe {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px 6px rgba(204, 255, 0, 0.35), 0 0 45px 12px rgba(45, 212, 191, 0.2);
+  }
+  50% {
+    transform: scale(1.12);
+    box-shadow: 0 0 35px 12px rgba(204, 255, 0, 0.55), 0 0 65px 20px rgba(45, 212, 191, 0.35);
+  }
+}
+
+@keyframes zenScoreFloat {
+  0% {
+    transform: translate(-50%, 0) scale(0.7);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(-50%, -12px) scale(1.1);
+    opacity: 1;
+  }
+  80% {
+    transform: translate(-50%, -40px) scale(1);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(-50%, -55px) scale(0.95);
+    opacity: 0;
+  }
+}
+
+@keyframes zenComboGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(204, 255, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(204, 255, 0, 0.7);
+  }
+}
+
+@keyframes zenWaterRipple {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.zen-object-spawn {
+  animation: zenSpawn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.zen-object-disappearing {
+  animation: zenDisappear 0.4s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+.zen-object-float {
+  animation: zenFloat 3.8s ease-in-out infinite;
+}
+
+.zen-orb-glow {
+  animation: zenOrbBreathe 3s ease-in-out infinite;
+}
+
+.zen-score-popup {
+  animation: zenScoreFloat 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.zen-combo-glow {
+  animation: zenComboGlow 1.8s ease-in-out infinite;
+}
+
+.zen-water-ripple {
+  animation: zenWaterRipple 0.8s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+/* ============================================================================
+   ACCESSIBILITY: PREFERS-REDUCED-MOTION
+   ============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .zen-object-spawn,
+  .zen-object-disappearing,
+  .zen-object-float,
+  .zen-orb-glow,
+  .zen-score-popup,
+  .zen-combo-glow,
+  .zen-water-ripple {
+    animation: none !important;
+    transition: opacity 0.2s ease-in-out !important;
+  }
+}

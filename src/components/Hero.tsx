@@ -4,9 +4,10 @@ import { ArrowDown, ArrowRight, ShieldCheck, Flame, Layers } from 'lucide-react'
 interface HeroProps {
   onShopClick: () => void;
   onLookbookClick: () => void;
+  onOpenZenFlow?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onShopClick, onLookbookClick }) => {
+export const Hero: React.FC<HeroProps> = ({ onShopClick, onLookbookClick, onOpenZenFlow }) => {
   return (
     <section id="hero" className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
       {/* Background Editorial Imagery with Dark Cinematic Vignette */}
@@ -26,6 +27,20 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick, onLookbookClick }) => {
       {/* Main Content Box */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 w-full flex flex-col justify-end min-h-[85vh]">
         <div className="max-w-3xl">
+          {/* Zen Flow Daily Challenge Callout */}
+          {onOpenZenFlow && (
+            <button
+              onClick={onOpenZenFlow}
+              className="group inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/95 dark:bg-[#121215]/95 backdrop-blur-md border border-[#ccff00]/60 dark:border-[#ccff00]/40 text-neutral-900 dark:text-white text-xs font-mono tracking-wider uppercase mb-5 transition-all hover:scale-105 active:scale-95 shadow-sm hover:border-[#ccff00] cursor-pointer"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#ccff00] animate-pulse" />
+              <span className="font-bold text-neutral-950 dark:text-[#ccff00]">ZEN FLOW CHALLENGE</span>
+              <span className="text-neutral-400 dark:text-neutral-500">—</span>
+              <span className="text-neutral-600 dark:text-neutral-400">Play Daily • Win Zen Master Badge</span>
+              <ArrowRight className="w-3.5 h-3.5 text-neutral-400 group-hover:translate-x-0.5 transition-transform" />
+            </button>
+          )}
+
           {/* Metadata Tag */}
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-neutral-200/90 text-neutral-800 text-xs font-mono tracking-widest uppercase mb-6 animate-in fade-in slide-in-from-bottom-2 duration-500 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-neutral-950"></span>

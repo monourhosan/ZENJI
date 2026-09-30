@@ -6,9 +6,10 @@ import { useTheme } from '../context/ThemeContext';
 interface HeaderProps {
   onOpenCart: () => void;
   onOpenLookbook?: () => void;
+  onOpenZenFlow?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenCart }) => {
+export const Header: React.FC<HeaderProps> = ({ onOpenCart, onOpenZenFlow }) => {
   const { totalCount } = useCart();
   const { theme, secondsRemaining, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -144,6 +145,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCart }) => {
               </span>
             </button>
 
+            {/* Zen Flow Daily Challenge Pill */}
+            {onOpenZenFlow && (
+              <button
+                onClick={onOpenZenFlow}
+                className="flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-neutral-900 dark:text-black bg-[#ccff00] hover:bg-[#b8e600] rounded-full px-3 py-1.5 font-bold transition-all shadow-sm hover:scale-105 active:scale-95 cursor-pointer"
+                title="Zen Flow Challenge — Daily Mindfulness Game"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-neutral-950 dark:bg-black animate-pulse" />
+                <span>ZEN FLOW</span>
+              </button>
+            )}
+
             {/* VIP Drop Pill */}
             <a
               href="#collection"
@@ -225,6 +238,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCart }) => {
                 <span>REGION: GLOBAL (USD $)</span>
                 <span className="text-neutral-900 font-bold">27S AUTO-CYCLE</span>
               </div>
+              {onOpenZenFlow && (
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    onOpenZenFlow();
+                  }}
+                  className="w-full py-3 bg-[#ccff00] text-black font-bold uppercase tracking-wider text-xs rounded flex items-center justify-center gap-2 hover:bg-[#b8e600] transition-colors shadow-md cursor-pointer"
+                >
+                  <Sparkles className="w-4 h-4 text-black" />
+                  <span>PLAY ZEN FLOW CHALLENGE (60s)</span>
+                </button>
+              )}
               <button
                 onClick={() => {
                   setIsMobileMenuOpen(false);

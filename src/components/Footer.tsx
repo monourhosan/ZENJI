@@ -28,7 +28,11 @@ const YoutubeIcon = () => (
   </svg>
 );
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenZenFlow?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenZenFlow }) => {
   const { addToast } = useCart();
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -192,6 +196,19 @@ export const Footer: React.FC = () => {
                   Weatherproof Shells
                 </a>
               </li>
+              {onOpenZenFlow && (
+                <li>
+                  <button
+                    onClick={onOpenZenFlow}
+                    className="hover:text-neutral-950 transition-colors text-left flex items-center gap-1.5 cursor-pointer text-[#ccff00] font-bold"
+                  >
+                    <span>Zen Flow Challenge</span>
+                    <span className="text-[9px] px-1.5 py-0.5 bg-[#ccff00]/20 rounded-full font-mono uppercase">
+                      DAILY
+                    </span>
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
 

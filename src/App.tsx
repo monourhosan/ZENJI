@@ -12,9 +12,11 @@ import { LookbookGallery } from './components/LookbookGallery';
 import { Footer } from './components/Footer';
 import { CartDrawer } from './components/CartDrawer';
 import { ToastContainer } from './components/ToastContainer';
+import { ZenFlowModal } from './features/zen-flow';
 
 const MainStorefront: React.FC = () => {
   const { openCart } = useCart();
+  const [isZenFlowOpen, setIsZenFlowOpen] = React.useState(false);
 
   const handleShopClick = () => {
     const el = document.getElementById('collection');
@@ -35,11 +37,18 @@ const MainStorefront: React.FC = () => {
       <DayNightCycleWidget />
 
       {/* Header */}
-      <Header onOpenCart={openCart} />
+      <Header
+        onOpenCart={openCart}
+        onOpenZenFlow={() => setIsZenFlowOpen(true)}
+      />
 
       <main id="main-content" className="relative z-10">
         {/* 1. Hero Section */}
-        <Hero onShopClick={handleShopClick} onLookbookClick={handleLookbookClick} />
+        <Hero
+          onShopClick={handleShopClick}
+          onLookbookClick={handleLookbookClick}
+          onOpenZenFlow={() => setIsZenFlowOpen(true)}
+        />
 
         {/* 2. Marquee Ticker */}
         <Marquee />
@@ -55,10 +64,16 @@ const MainStorefront: React.FC = () => {
       </main>
 
       {/* 6. Footer */}
-      <Footer />
+      <Footer onOpenZenFlow={() => setIsZenFlowOpen(true)} />
 
       {/* Cart Drawer */}
       <CartDrawer />
+
+      {/* Zen Flow Daily Challenge Modal */}
+      <ZenFlowModal
+        isOpen={isZenFlowOpen}
+        onClose={() => setIsZenFlowOpen(false)}
+      />
 
       {/* Toast Notification Stack */}
       <ToastContainer />

@@ -84,9 +84,43 @@
 - Curated 3-column photo gallery showcasing pieces in metropolitan settings.
 - Lightbox modal allowing customers to inspect high-resolution campaign stills.
 
-### 9. Minimalist Footer & Newsletter
-- VIP Newsletter signup with client-side validation, loading state, and promotional reward code (`ZENJI10`).
-- Store directory, concierge links, atelier addresses, and social channels.
+### 9. Zen Flow Challenge (Daily Gamified Mindfulness)
+- **Concept:** A 60-second peaceful reaction game inspired by meditation apps. Users guide a luminous "Zen Energy Orb" through undulating atmospheric waves and floating particles to collect blooming sacred objects.
+- **Sacred Zen Objects:**
+  - **Lotus:** Sacred petal geometry (calm rose-quartz glow).
+  - **Energy Circle:** Concentric mandala rings with Acid Lime aura.
+  - **Crystal:** Hexagonal quartz crystal with prismatic light.
+  - **Water Drop:** Translucent droplet with caustic highlight.
+  - **Leaf:** Organic botanical leaf with gentle curve.
+- **Scoring & Combo System:**
+  - Base Hit: `+10` points
+  - Fast Reflex Reaction (< 800ms): `+20` points (`+10` base + `+10` speed bonus)
+  - Combo Multipliers: Every 5 consecutive hits increases multiplier (`5 hits: x2`, `10 hits: x3`, `15+ hits: x4`)
+  - Miss / Background Tap: `-5` points, breaks combo streak
+- **Authoritative Anti-Cheat Engine:**
+  - Zero-trust model: Client score is never accepted.
+  - Generates a deterministic session with PRNG seed (`game_seed`).
+  - Client sends raw interaction telemetry: click coordinates, target object IDs, and high-resolution timestamps.
+  - Backend verifies:
+    1. Minimum legitimate duration (rejects sessions < 55 seconds).
+    2. Inhuman reaction reflexes (flags taps under 140ms as automated bots).
+    3. Click rate limits and coordinates sanity.
+  - Authoritatively calculates score, combo streaks, and assigns verified rankings.
+- **Daily Competition & Midnight Reset:**
+  - Dynamic daily leaderboards partitioned by server UTC date (`YYYY-MM-DD`).
+  - Resets automatically every midnight (`00:00:00` UTC) with a live countdown timer.
+  - Daily podium (#1, #2, #3) with user avatars, ranks, and badges.
+  - Historical Winners Archive preserving previous champions (e.g. September 30 Winner: Rahim, Score: 5420).
+- **Scalable Rewards Architecture:**
+  - Relational schema in `db/schema.sql` supporting `badge`, `coins`, `coupons`, `nft`, and `premium_days`.
+  - Daily victor receives the prestigious `ZEN MASTER` badge and exclusive 15% VIP store coupon code (`ZENFLOW15`).
+- **Synthesized Web Audio Soundscapes:**
+  - 100% self-contained Web Audio API synthesizer with zero external audio assets.
+  - 432Hz & 528Hz Tibetan singing bowl harmonics, gentle water drops, and crystal chimes.
+  - Persistent audio mute toggle saved to user preferences.
+- **Accessibility & Mobile-First:**
+  - Full touch and cursor interaction (responsive down to 320px screen widths).
+  - Strict compliance with `@media (prefers-reduced-motion)` for calming, gentle transitions.
 
 ---
 
@@ -130,6 +164,12 @@ This generates optimized static production files in the `dist/` directory:
 To preview the production build locally:
 ```bash
 npm run preview
+```
+
+### Automated Verification & Testing
+To execute the automated test suite verifying anti-cheat validation, scoring formulas, combos, and daily leaderboard resets:
+```bash
+npm test
 ```
 
 ---
